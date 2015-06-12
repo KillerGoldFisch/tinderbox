@@ -67,22 +67,6 @@ def perfect=MessageTree( value= "Perfect! Usually our first contact with people 
 def wouldyoulike=MessageTree( value= "Would you like me to add you to our recruitment chat so you can find out more about available positions?", right=whatsappnumber, left=None);
 def whatsappnumber=MessageTree( value= "Great! If you give me your whatsapp number I can add you and you can chat with my colleagues.", right=thanks, left=None);
 def thanks=MessageTree( value= "Thanks! It's so weird to chat on tinder and end up finding a possible work colleague!", right=None, left=None);
-
-//set 3
-def hello=MessageTree( value= "Hello:)", right=youtoday, left=None);
-def youtoday=MessageTree( value= "How are you today?", right=imfinetoo, left=sosorry);
-def imfinetoo=Some(MessageTree( value= "I'm fine too thanks!", right=wherefrom, left=None));
-def sosorry=Some(MessageTree( value= "I'm sorry, how come?", right=None, left=None));
-def wherefrom=MessageTree( value= "Where are you from?", right=niceplace, left=None);
-def niceplace=Some(MessageTree( value= "Nice! I've never been there... What's it like?", right=verynice, left=None));
-def verynice=MessageTree( value= "Very nice!", right=imfrom, left=None);
-def imfrom=MessageTree( value= "I'm from Milan", right=itssunny, left=None);
-def itssunny=MessageTree( value= "It's sunny and warm here today, very beautiful place", right=visit, left=None);
-def visit=MessageTree( value= "You should visit some day!", right=lakecomo, left=None);
-def lakecomo=MessageTree( value= "Have you ever been to Lake Como?", right=iliveclose, left=None);
-def iliveclose=MessageTree( value= "I live close to there, it's very beautiful!", right=whatdoyoudo, left=None);
-def whatdoyoudo=MessageTree( value= "What do you do for a living?", right=wow2, left=None);
-def wow2=MessageTree( value= "Wow, really? That's cool!", right=iwork, left=None);
 def iwork=MessageTree( value= "I work for this amazing software company.", right=thefirst, left=None);
 def thefirst=MessageTree( value= "We are the first certified IT B Corp in Europe!", right=doyouknow, left=None);
 def doyouknow=MessageTree( value= "Do you know what a B Corp is?", right=certification, left=None);
@@ -101,6 +85,18 @@ def usually=MessageTree( value= "Great! Usually we have an initial chat with peo
 def addyou=MessageTree( value= "If you like, I can add you to our recruitment chat and you can find out more about us :)", right=number, left=None);
 def number=MessageTree( value= "Could you give me your whatsapp number please?", right=thanks3, left=None);
 def thanks3=MessageTree( value= "Thanks! It's so weird to chat on tinder and end up finding a possible work colleague!", right=None, left=None);
+
+//set 4
+def hello=MessageTree( value= "Hello:)", right=youtoday, left=None);
+def youtoday=MessageTree( value= "How are you today?", right=imfine, left=sosorry);
+def imfinetoo=Some(MessageTree( value= "I'm fine too thanks!", right=wherefrom, left=None));
+def sosorry=Some(MessageTree( value= "I'm sorry, how come?", right=None, left=None));
+def wherefrom=MessageTree( value= "Where are you from?", right=niceplace, left=None);
+def niceplace=Some(MessageTree( value= "Nice! I've never been there... What's it like?", right=verynice, left=None));
+def verynice=MessageTree( value= "Very nice!", right=imfrom, left=None);
+def imfrom=MessageTree( value= "I'm from Milan", right=itssunny, left=None);
+def 
+
 
 
   //def kirsten=Ruffoni( capelli="blue", occhi=occhioAzzurro, cavallo="Rocky");
