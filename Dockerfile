@@ -1,30 +1,24 @@
 # Pull base image.
-FROM ubuntu:trusty
+FROM java:7
 MAINTAINER mondora <together@mondora.com>
 
-# Install Java.
-RUN apt-get -y install software-properties-common && \
-  echo oracle-java7-installer shared/accepted-oracle-license-v1-1 select true | debconf-set-selections && \
-  add-apt-repository -y ppa:webupd8team/java && \
-  apt-get update && \
+# Install additional packages.
+RUN apt-get update -y && \
   apt-get install -y zip unzip && \
   apt-get install -y curl && \
-  apt-get install -y oracle-java7-installer && \
-  rm -rf /var/lib/apt/lists/* && \
-  rm -rf /var/cache/oracle-jdk7-installer
+  rm -rf /var/lib/apt/lists/*
 
 # Install Sbt.
 ADD https://dl.bintray.com/sbt/debian/sbt-0.13.8.deb .
 RUN dpkg -i sbt-0.13.8.deb
 
 # Install Scala.
-ADD http://downloads.typesafe.com/scala/2.11.6/scala-2.11.6.deb .
-RUN dpkg -i scala-2.11.6.deb
+ADD http://downloads.typesafe.com/scala/2.11.7/scala-2.11.7.deb .
+RUN dpkg -i scala-2.11.7.deb
 
-# Setting up environment
+# Setting up environment.
 ENV HOME /root
 ENV DEBIAN_FRONTEND noninteractive
-ENV JAVA_HOME /usr/lib/jvm/java-7-oracle
 WORKDIR $HOME
 COPY ./ $HOME/
 

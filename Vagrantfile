@@ -20,12 +20,10 @@ __BOOTSTRAP__
 
 
 Vagrant.configure(2) do |config|
-  #config.vm.box = "vivid64"
   config.vm.box = "trusty64"
 
   # The url from where the 'config.vm.box' box will be fetched if it
   # doesn't already exist on the user's system.
-  #config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/vivid/current/vivid-server-cloudimg-amd64-vagrant-disk1.box"
   config.vm.box_url = "https://cloud-images.ubuntu.com/vagrant/trusty/current/trusty-server-cloudimg-amd64-vagrant-disk1.box"
   config.vm.network :forwarded_port, host: 9000, guest: 9000
   config.ssh.forward_agent = true
