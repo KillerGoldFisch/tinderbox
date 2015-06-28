@@ -13,8 +13,8 @@ ADD https://dl.bintray.com/sbt/debian/sbt-0.13.8.deb .
 RUN dpkg -i sbt-0.13.8.deb
 
 # Install Scala.
-ADD http://downloads.typesafe.com/scala/2.11.7/scala-2.11.7.deb .
-RUN dpkg -i scala-2.11.7.deb
+#ADD http://downloads.typesafe.com/scala/2.11.7/scala-2.11.7.deb .
+#RUN dpkg -i scala-2.11.7.deb
 
 # Setting up environment.
 ENV HOME /root
